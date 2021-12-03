@@ -80,8 +80,8 @@ img {
 }
 
 .header a {
-    padding-top: 32px;
-    padding-bottom: 32px;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 header {
@@ -99,10 +99,6 @@ header {
     color: var(--secondary-text-color);
 }
 
-.header-contacts:first-child {
-    margin-right: 50px;
-}
-
 .header-envelope {
     height: 12px;
     width: 16px;
@@ -115,9 +111,11 @@ header {
     width: 10px;
     margin-right: 10px;
     fill: currentColor;
+    position: relative;
+    top: 2px;
 }
 
-.header-contacts:hover, .header-contacts:hover a {
+.header-contacts:hover, .header-contacts:hover a, .header-contacts:focus, .header-contacts a:focus {
     color: var(--accent-text-color);
 }
 
@@ -185,6 +183,8 @@ header {
             rgba(47, 48, 58, 0.4)
         ),
         url(../images/bg-image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     max-width: 1600рх;
 }
 
@@ -289,6 +289,10 @@ header {
     text-decoration: none;
 }
 
+.team-link > img {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 .team-members {
     font-size: 16px;
     list-style: none;
@@ -361,11 +365,24 @@ header {
 .clients-item {
     width: 170px;
     height: 92px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     border: 1px solid #AFB1B8;
     border-radius: 3px;
+    color: #afb1b8;
+}
+
+.clients-item-icon.fourth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clients-item-icon {
+    fill: currentColor;
+}
+.clients-item:hover, .clients-item:focus {
+    color: var(--accent-text-color);
+    border: 1px solid var(--accent-text-color);
 }
 
 .clients-list li:not(:last-child) {
@@ -412,6 +429,7 @@ header {
 
 .footer-block {
     display: flex;
+    align-items: baseline;
 }
 
 .footer-block .right {
@@ -469,13 +487,14 @@ header {
     padding: 6px 22px;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .portfolio-buttons li:not(:last-child) {
     margin-right: 8px;
 }
 
-.portfolio-buttons .item:hover, .portfolio-buttons .item:hover:focus {
+.portfolio-buttons .item:hover, .portfolio-buttons .item:focus {
     color: var(--header-text-color);
     background-color: var(--button-secondary-color);
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
